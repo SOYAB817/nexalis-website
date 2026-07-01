@@ -98,7 +98,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="footer-copy" style={{ textAlign: 'right' }}>
+        <div className="footer-copy">
           <p style={{ marginBottom: '8px' }}>
             📞 Call/WhatsApp:{' '}
             <a
