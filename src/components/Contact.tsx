@@ -4,7 +4,10 @@ import type { ChangeEvent, FormEvent } from 'react';
 interface ContactFormData {
   name: string;
   email: string;
+  phone: string;
+  company: string;
   service: string;
+  budget: string;
   message: string;
 }
 
@@ -12,7 +15,10 @@ export default function Contact() {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
-    service: 'saas',
+    phone: '',
+    company: '',
+    service: 'Enterprise Software Development',
+    budget: 'Starting from ₹35,000',
     message: '',
   });
 
@@ -34,16 +40,7 @@ export default function Contact() {
 
     try {
       const phoneNumber = '916398995485';
-      const serviceName =
-        formData.service === 'saas'
-          ? 'SaaS Platform Development'
-          : formData.service === 'web'
-          ? 'Full-Stack Web App'
-          : formData.service === 'mobile'
-          ? 'Mobile Application'
-          : 'AI Chatbot & Automation';
-
-      const messageText = `Hi Nexalis Software, I'd like to discuss a project.\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Service Selected:* ${serviceName}\n*Project Details:* ${formData.message}`;
+      const messageText = `Hi Nexalis Software, I'd like to discuss a project.\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Company:* ${formData.company}\n*Service:* ${formData.service}\n*Budget:* ${formData.budget}\n*Project Details:* ${formData.message}`;
       const encodedMessage = encodeURIComponent(messageText);
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
@@ -54,7 +51,10 @@ export default function Contact() {
       setFormData({
         name: '',
         email: '',
-        service: 'saas',
+        phone: '',
+        company: '',
+        service: 'Enterprise Software Development',
+        budget: 'Starting from ₹35,000',
         message: '',
       });
     } catch (error) {
@@ -69,10 +69,8 @@ export default function Contact() {
     <section id="contact" className="contact-section">
       <div className="container">
         <div className="section-header">
-          <h2>
-            Let's Build Something <span className="highlight">Great</span>
-          </h2>
-          <p>Have an idea or a project in mind? Drop us a message, and we'll get back to you within 24 hours.</p>
+          <h2>Let's Build Something <span className="highlight">Great</span></h2>
+          <p>Tell us about your project requirements, and we will redirect you to configure your consultation on WhatsApp.</p>
         </div>
         <div className="contact-form-wrapper">
           {submitStatus === 'success' ? (
@@ -94,8 +92,10 @@ export default function Contact() {
               >
                 ✓
               </div>
-              <h3>Message Sent Successfully!</h3>
-              <p style={{ color: 'var(--text-muted)', marginTop: '10px' }}>Thank you for reaching out. We will get in touch with you shortly.</p>
+              <h3>Redirection Triggered Successfully!</h3>
+              <p style={{ color: 'var(--text-muted)', marginTop: '10px' }}>
+                Your project details are formatted. Click below to re-open WhatsApp if needed.
+              </p>
               <button onClick={() => setSubmitStatus('idle')} className="btn btn-secondary" style={{ marginTop: '24px' }}>
                 Send another message
               </button>
@@ -116,7 +116,7 @@ export default function Contact() {
                     fontWeight: '500',
                   }}
                 >
-                  Failed to send message. Please email us directly at{' '}
+                  Failed to format details. Please email us directly at{' '}
                   <a href="mailto:softwarenexalis@gmail.com" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>
                     softwarenexalis@gmail.com
                   </a>
@@ -140,15 +140,50 @@ export default function Contact() {
                   />
                 </div>
               </div>
-              <div className="form-group">
-                <label htmlFor="service">Select Service</label>
-                <select id="service" name="service" value={formData.service} onChange={handleInputChange}>
-                  <option value="saas">SaaS Platform Development</option>
-                  <option value="web">Full-Stack Web App</option>
-                  <option value="mobile">Mobile Application</option>
-                  <option value="chatbot">AI Chatbot & Automation</option>
-                </select>
+
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" required value={formData.phone} onChange={handleInputChange} placeholder="Enter your phone" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="company">Company / Org</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    required
+                    value={formData.company}
+                    onChange={handleInputChange}
+                    placeholder="Enter company name"
+                  />
+                </div>
               </div>
+
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="service">Select Service</label>
+                  <select id="service" name="service" value={formData.service} onChange={handleInputChange}>
+                    <option value="Enterprise Software Development">Enterprise Software Development</option>
+                    <option value="Custom SaaS Development">Custom SaaS Development</option>
+                    <option value="Full Stack Web Applications">Full Stack Web Applications</option>
+                    <option value="Mobile App Development">Mobile App Development</option>
+                    <option value="AI Automation Solutions">AI Automation Solutions</option>
+                    <option value="API Development & Integration">API Development & Integration</option>
+                    <option value="Cloud Deployment">Cloud Deployment</option>
+                    <option value="Maintenance & Support">Maintenance & Support</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="budget">Estimated Budget</label>
+                  <select id="budget" name="budget" value={formData.budget} onChange={handleInputChange}>
+                    <option value="Starting from ₹35,000">Business Website (₹35k+)</option>
+                    <option value="Starting from ₹80,000">Custom Web App (₹80k+)</option>
+                    <option value="Enterprise Custom Quote">Enterprise Solution (Custom Quote)</option>
+                  </select>
+                </div>
+              </div>
+
               <div className="form-group">
                 <label htmlFor="message">Project Details</label>
                 <textarea
@@ -161,9 +196,19 @@ export default function Contact() {
                   placeholder="Tell us about your project requirements..."
                 ></textarea>
               </div>
-              <button type="submit" disabled={isSubmitting} className="btn btn-primary btn-submit">
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-              </button>
+              
+              <div style={{ display: 'flex', gap: '16px', marginTop: '20px' }}>
+                <button type="submit" disabled={isSubmitting} className="btn btn-primary btn-submit" style={{ flex: 1 }}>
+                  {isSubmitting ? 'Sending...' : 'Start on WhatsApp'}
+                </button>
+                <a
+                  href="mailto:softwarenexalis@gmail.com"
+                  className="btn btn-secondary"
+                  style={{ display: 'inline-flex', justifyContent: 'center', alignItems: 'center', minWidth: '150px' }}
+                >
+                  Or Send Email
+                </a>
+              </div>
             </form>
           )}
         </div>

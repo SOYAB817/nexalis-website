@@ -11,10 +11,12 @@ export default function Header() {
         </a>
         <nav className="nav-links">
           <a href="#services">Services</a>
+          <a href="#technologies">Technologies</a>
+          <a href="#industries">Industries</a>
           <a href="#portfolio">Work</a>
           <a href="#about">About</a>
           <a href="#faq">FAQ</a>
-          <a href="#contact" className="btn-cta-nav">Get Started</a>
+          <a href="#contact" className="btn-cta-nav" style={{ padding: '8px 16px', fontSize: '0.85rem' }}>Book Free Consultation</a>
         </nav>
       </div>
     </header>
