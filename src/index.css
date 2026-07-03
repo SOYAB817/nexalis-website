@@ -1,16 +1,16 @@
 /* Design System for Nexalis Software */
 
 :root {
-    --bg-dark: #070a13;
-    --bg-card: #0b111e;
-    --primary: #00f0ff;
-    --primary-glow: rgba(0, 240, 255, 0.4);
-    --secondary: #ff9933;
-    --secondary-glow: rgba(255, 153, 51, 0.4);
-    --text-main: #f3f4f6;
-    --text-muted: #9ca3af;
-    --border-glass: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(0, 240, 255, 0.3);
+    --bg-dark: #faf9f6;
+    --bg-card: #ffffff;
+    --primary: #4f46e5;
+    --primary-glow: rgba(79, 70, 229, 0.15);
+    --secondary: #db2777;
+    --secondary-glow: rgba(219, 39, 119, 0.15);
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --border-glass: rgba(0, 0, 0, 0.08);
+    --border-hover: rgba(79, 70, 229, 0.3);
     --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -94,7 +94,7 @@ header {
     z-index: 100;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(7, 10, 19, 0.8);
+    background-color: rgba(250, 249, 246, 0.85);
     border-bottom: 1px solid var(--border-glass);
     transition: var(--transition);
 }
@@ -181,7 +181,7 @@ header {
     overflow: hidden;
     background-color: var(--bg-card);
     border: 1px solid var(--border-glass);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
 }
 
 .banner-slider-track {
@@ -212,7 +212,7 @@ header {
     position: absolute;
     inset: 0;
     z-index: 2;
-    background: linear-gradient(90deg, rgba(7, 10, 19, 0.85) 0%, rgba(7, 10, 19, 0.4) 40%, rgba(7, 10, 19, 0) 100%);
+    background: linear-gradient(90deg, rgba(250, 249, 246, 0.98) 0%, rgba(250, 249, 246, 0.4) 45%, rgba(250, 249, 246, 0) 100%);
 }
 
 .banner-content {
@@ -234,8 +234,8 @@ header {
 
 .tagline-badge {
     display: inline-block;
-    background: rgba(0, 240, 255, 0.08);
-    border: 1px solid rgba(0, 240, 255, 0.2);
+    background: rgba(79, 70, 229, 0.06);
+    border: 1px solid rgba(79, 70, 229, 0.15);
     color: var(--primary);
     font-weight: 600;
     font-size: 0.85rem;
@@ -252,7 +252,7 @@ header {
     line-height: 1.15;
     margin-bottom: 24px;
     letter-spacing: -1.5px;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    text-shadow: none;
     text-align: left;
 }
 
@@ -265,10 +265,10 @@ header {
 
 .hero-subtitle {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--text-muted);
     margin-bottom: 40px;
     line-height: 1.6;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    text-shadow: none;
     text-align: left;
 }
 
@@ -302,14 +302,14 @@ header {
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--border-glass);
-    color: var(--text-main);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: #0f172a;
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: var(--text-muted);
+    background: #f1f5f9;
+    border-color: #cbd5e1;
 }
 
 /* Controls at Bottom Left inside card */
@@ -327,7 +327,7 @@ header {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(0, 0, 0, 0.04);
     border: 1px solid var(--border-glass);
     color: var(--text-main);
     font-size: 1.2rem;
@@ -340,7 +340,7 @@ header {
 
 .arrow-btn:hover {
     background-color: var(--primary);
-    color: var(--bg-dark);
+    color: #ffffff;
     box-shadow: 0 0 15px var(--primary-glow);
     border-color: var(--primary);
 }
@@ -480,13 +480,13 @@ header {
 .portfolio-image {
     width: 100%;
     height: 220px;
-    background: linear-gradient(135deg, rgba(13, 27, 46, 0.8) 0%, rgba(7, 10, 19, 0.9) 100%);
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
     border-bottom: 1px solid var(--border-glass);
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 800;
-    color: rgba(255, 255, 255, 0.15);
+    color: rgba(0, 0, 0, 0.05);
     font-size: 3rem;
     letter-spacing: 4px;
     position: relative;
@@ -496,7 +496,7 @@ header {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(7, 10, 19, 0.8) 100%);
+    background: linear-gradient(180deg, transparent 40%, rgba(255, 255, 255, 0.95) 100%);
 }
 
 .portfolio-info {
@@ -728,7 +728,7 @@ header {
     height: 48px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: var(--bg-dark);
+    color: #ffffff;
     font-weight: 800;
     display: flex;
     justify-content: center;
@@ -863,7 +863,7 @@ header {
 .form-group input, 
 .form-group select, 
 .form-group textarea {
-    background-color: rgba(7, 10, 19, 0.8);
+    background-color: #ffffff;
     border: 1.5px solid var(--border-glass);
     border-radius: 8px;
     color: var(--text-main);
@@ -878,7 +878,7 @@ header {
 .form-group select:focus, 
 .form-group textarea:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.15);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.15);
 }
 
 .btn-submit {

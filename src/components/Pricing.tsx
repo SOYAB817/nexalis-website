@@ -51,7 +51,7 @@ export default function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="services-section" style={{ background: 'rgba(7, 10, 19, 0.5)' }}>
+    <section id="pricing" className="services-section" style={{ background: 'rgba(0, 0, 0, 0.02)' }}>
       <div className="container">
         <div className="section-header">
           <h2>Clear, Transparent <span className="highlight">Pricing</span></h2>

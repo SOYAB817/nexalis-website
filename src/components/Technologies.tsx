@@ -25,7 +25,7 @@ export default function Technologies() {
   ];
 
   return (
-    <section id="technologies" className="services-section" style={{ background: 'rgba(7, 10, 19, 0.5)' }}>
+    <section id="technologies" className="services-section" style={{ background: 'rgba(0, 0, 0, 0.02)' }}>
       <div className="container">
         <div className="section-header">
           <h2>Our <span className="highlight">Tech Stack</span></h2>
