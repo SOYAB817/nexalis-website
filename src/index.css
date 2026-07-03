@@ -2,7 +2,7 @@
 
 :root {
     --bg-dark: #070a13;
-    --bg-card: rgba(13, 23, 42, 0.6);
+    --bg-card: #0b111e;
     --primary: #00f0ff;
     --primary-glow: rgba(0, 240, 255, 0.4);
     --secondary: #ff9933;
@@ -52,7 +52,7 @@ body {
 }
 
 .ambient-circle {
-    position: absolute;
+    position: fixed;
     border-radius: 50%;
     filter: blur(100px);
     z-index: -1;
@@ -302,11 +302,9 @@ header {
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.06);
     border: 1px solid var(--border-glass);
     color: var(--text-main);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
 }
 
 .btn-secondary:hover {
@@ -404,8 +402,6 @@ header {
 
 .service-card {
     background-color: var(--bg-card);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     border: 1px solid var(--border-glass);
     border-radius: 12px;
     padding: 40px 30px;
@@ -469,8 +465,6 @@ header {
 
 .portfolio-card {
     background-color: var(--bg-card);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     border: 1px solid var(--border-glass);
     border-radius: 16px;
     overflow: hidden;
@@ -619,8 +613,6 @@ header {
 
 .about-card {
     background-color: var(--bg-card);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border-glass);
     border-radius: 16px;
     padding: 60px;
