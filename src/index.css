@@ -116,34 +116,14 @@ header {
     gap: 12px;
 }
 
-.logo-icon-wrapper {
-    width: 44px;
-    height: 44px;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1.5px solid var(--border-glass);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #0c1220;
-    transition: var(--transition);
-}
-
-.logo:hover .logo-icon-wrapper {
-    border-color: var(--primary);
-    box-shadow: 0 0 12px var(--primary-glow);
-}
-
-.logo-icon {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: hue-rotate(-25deg) saturate(1.8) brightness(1.4);
-    transition: var(--transition);
-}
-
-.logo:hover .logo-icon {
-    filter: hue-rotate(-25deg) saturate(2.2) brightness(1.6);
+.logo-nx {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--bg-dark);
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    letter-spacing: 1px;
 }
 
 .logo-text {

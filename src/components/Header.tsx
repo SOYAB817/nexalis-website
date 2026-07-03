@@ -1,14 +1,10 @@
 
-import logoImg from '../assets/logo.jpg';
-
 export default function Header() {
   return (
     <header>
       <div className="nav-container">
         <a href="#" className="logo">
-          <div className="logo-icon-wrapper">
-            <img src={logoImg} alt="Nexalis Logo" className="logo-icon" />
-          </div>
+          <span className="logo-nx">NX</span>
           <span className="logo-text">
             NEXALIS <span className="highlight">SOFTWARE</span>
           </span>
