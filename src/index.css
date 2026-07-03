@@ -124,7 +124,7 @@ header {
     border: 1.5px solid var(--border-glass);
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     background-color: #0c1220;
     transition: var(--transition);
 }
@@ -137,9 +137,7 @@ header {
 .logo-icon {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transform: scale(2.1);
-    transform-origin: 50% 27%;
+    object-fit: contain;
     filter: hue-rotate(-25deg) saturate(1.8) brightness(1.4);
     transition: var(--transition);
 }
